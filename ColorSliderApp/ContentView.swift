@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var color = ColorScheme()
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -32,6 +33,13 @@ struct ContentView: View {
                 }
             }
             Spacer()
+        }
+        .alert(isPresented: $showingAlert, content: {
+            Alert(title: Text("WARNING"), message: Text("Incorrect value"), dismissButton: .default(Text("OK")))
+        })
+        .onTapGesture {
+            showingAlert = color.validationText()
+            UIApplication.shared.endEditing()
         }
         .padding()
     }

@@ -23,7 +23,20 @@ class ColorScheme: ObservableObject {
             UserDefaults.standard.set(blueColor, forKey: "blueColor")
         }
     }
-    //@Published var color: Color = Color(red: 0, green: 0, blue: 0)
+    
+    func validationText() -> Bool {
+        if redColor < 0.00 {
+            redColor = 0.00
+            return true
+        }
+        if redColor > 1.00 {
+            redColor = 1.00
+            return true
+        }
+        else {
+            return false
+        }
+    }
     
     init() {
         self.redColor = UserDefaults.standard.object(forKey: "redColor") as? Double ?? 1
