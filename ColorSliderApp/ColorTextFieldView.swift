@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ColorTextFieldView: View {
-    @Binding var text: Double
+    @Binding var value: Double
+    @State private var showingAlert = false
     
     var body: some View {
-            TextField("0.00", value: $text, formatter: formatter)
+        TextField("0.00", value: $value, formatter: formatter, onCommit: {
+            showingAlert = validationText()
+        })
                 .frame(width: 50, height: 30)
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).opacity(0.5))
                 .multilineTextAlignment(.center)
-                .keyboardType(.decimalPad)
+                .alert(isPresented: $showingAlert, content: {
+                    Alert(title: Text("WARNING"), message: Text("Incorrect value"), dismissButton: .default(Text("OK")))
+                })
     }
     
     let formatter: NumberFormatter = {
@@ -23,10 +28,18 @@ struct ColorTextFieldView: View {
         formatter.numberStyle = .decimal
         return formatter
     }()
-}
-
-extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    
+    private func validationText() -> Bool {
+        if value < 0.00 {
+            value = 0.00
+            return true
+        }
+        if value > 1.00 {
+            value = 1.00
+            return true
+        }
+        else {
+            return false
+        }
     }
 }

@@ -24,20 +24,6 @@ class ColorScheme: ObservableObject {
         }
     }
     
-    func validationText() -> Bool {
-        if redColor < 0.00 {
-            redColor = 0.00
-            return true
-        }
-        if redColor > 1.00 {
-            redColor = 1.00
-            return true
-        }
-        else {
-            return false
-        }
-    }
-    
     init() {
         self.redColor = UserDefaults.standard.object(forKey: "redColor") as? Double ?? 1
         self.greenColor = UserDefaults.standard.object(forKey: "greenColor") as? Double ?? 1
