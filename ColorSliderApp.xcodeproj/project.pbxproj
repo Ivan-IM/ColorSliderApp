@@ -15,6 +15,8 @@
 		CF2394F626B3BB1000AB3BC1 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2394F526B3BB1000AB3BC1 /* ColorScheme.swift */; };
 		CF2394F826B3C7C100AB3BC1 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2394F726B3C7C100AB3BC1 /* SliderView.swift */; };
 		CF2394FC26B3CBD700AB3BC1 /* ColorTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2394FB26B3CBD700AB3BC1 /* ColorTextFieldView.swift */; };
+		CF6E61E826B66A8F0055E93B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E61E726B66A8F0055E93B /* GradientView.swift */; };
+		CF6E61EA26B679C40055E93B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E61E926B679C40055E93B /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CF2394F526B3BB1000AB3BC1 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		CF2394F726B3C7C100AB3BC1 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		CF2394FB26B3CBD700AB3BC1 /* ColorTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTextFieldView.swift; sourceTree = "<group>"; };
+		CF6E61E726B66A8F0055E93B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		CF6E61E926B679C40055E93B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				CF2394F326B3B7B400AB3BC1 /* ColorView.swift */,
 				CF2394F726B3C7C100AB3BC1 /* SliderView.swift */,
 				CF2394FB26B3CBD700AB3BC1 /* ColorTextFieldView.swift */,
+				CF6E61E726B66A8F0055E93B /* GradientView.swift */,
+				CF6E61E926B679C40055E93B /* ButtonView.swift */,
 			);
 			path = ColorSliderApp;
 			sourceTree = "<group>";
@@ -160,10 +166,12 @@
 			files = (
 				CF2394FC26B3CBD700AB3BC1 /* ColorTextFieldView.swift in Sources */,
 				CF2394F626B3BB1000AB3BC1 /* ColorScheme.swift in Sources */,
+				CF6E61EA26B679C40055E93B /* ButtonView.swift in Sources */,
 				CF2394F426B3B7B400AB3BC1 /* ColorView.swift in Sources */,
 				CF2394E726B3B79E00AB3BC1 /* ContentView.swift in Sources */,
 				CF2394E526B3B79E00AB3BC1 /* ColorSliderAppApp.swift in Sources */,
 				CF2394F826B3C7C100AB3BC1 /* SliderView.swift in Sources */,
+				CF6E61E826B66A8F0055E93B /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

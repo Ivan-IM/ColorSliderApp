@@ -9,32 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var color = ColorScheme()
+    @State private var showingGradient = false
     
     var body: some View {
-        VStack {
-            ColorView(color: Color(red: color.redColor, green: color.greenColor, blue: color.blueColor))
-            Spacer()
-            VStack(spacing: 30) {
-                HStack {
-                    SliderView(value: $color.redColor)
-                        .accentColor(.red)
-                    ColorTextFieldView(value: $color.redColor)
+            VStack {
+                ZStack {
+                    ColorView(color: Color(red: color.redColor, green: color.greenColor, blue: color.blueColor))
+                        .opacity(showingGradient ? 0:1)
+                    GradientView(redColor: color.redColor, greenColor: color.greenColor, blueColor: color.blueColor)
+                        .opacity(showingGradient ? 1:0)
                 }
-                HStack {
-                    SliderView(value: $color.greenColor)
-                        .accentColor(.green)
-                    ColorTextFieldView(value: $color.greenColor)
+                Spacer()
+                VStack(spacing: 30) {
+                    HStack {
+                        SliderView(value: $color.redColor)
+                            .accentColor(.red)
+                        ColorTextFieldView(value: $color.redColor)
+                    }
+                    HStack {
+                        SliderView(value: $color.greenColor)
+                            .accentColor(.green)
+                        ColorTextFieldView(value: $color.greenColor)
+                    }
+                    HStack {
+                        SliderView(value: $color.blueColor)
+                            .accentColor(.blue)
+                        ColorTextFieldView(value: $color.blueColor)
+                    }
                 }
-                HStack {
-                    SliderView(value: $color.blueColor)
-                        .accentColor(.blue)
-                    ColorTextFieldView(value: $color.blueColor)
+                Spacer()
+                ButtonView {
+                    showingGradient.toggle()
                 }
+                Spacer()
             }
-            Spacer()
+            .padding()
         }
-        .padding()
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
